@@ -1,4 +1,8 @@
+// Installing Dependencies
+
 const jwt = require('jsonwebtoken');
+
+// Exporting the authorization function
 
 module.exports = (req, res, next) => {
     try {

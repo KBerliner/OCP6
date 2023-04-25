@@ -1,4 +1,8 @@
+// Installing Dependencies
+
 const mongoose = require('mongoose');
+
+// Creating a blueprint for the "Sauce" object
 
 const sauceSchema = mongoose.Schema({
     userId: String,
@@ -13,5 +17,7 @@ const sauceSchema = mongoose.Schema({
     usersLiked: Array,
     usersDisliked: Array
 });
+
+// Exporting the blueprint
 
 module.exports = mongoose.model('Sauce', sauceSchema);

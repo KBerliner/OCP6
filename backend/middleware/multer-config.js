@@ -1,10 +1,16 @@
+// Installing Dependencies
+
 const multer = require('multer');
+
+// File Extension Possibilites
 
 const MIME_TYPES = {
     'image/jpg': 'jpg',
     'image/jpeg': 'jpg',
     'image/png': 'png'
 };
+
+// Saving Images
 
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
@@ -16,5 +22,7 @@ const storage = multer.diskStorage({
         callback(null, name + Date.now() + '.' + extension);
     }
 });
+
+// Exporting the image saving function
 
 module.exports = multer({ storage: storage }).single('image');

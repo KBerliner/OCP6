@@ -1,5 +1,9 @@
+// Installing Dependencies
+
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
+
+// Creating a blueprint for the "User" object
 
 const userSchema = mongoose.Schema({
     email: { type: String, required: true, unique: true },
@@ -7,5 +11,7 @@ const userSchema = mongoose.Schema({
 });
 
 userSchema.plugin(uniqueValidator);
+
+// Exporting the User blueprint
 
 module.exports = mongoose.model('User', userSchema);

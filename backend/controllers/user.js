@@ -1,6 +1,10 @@
+// Importing Dependencies
+
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
+
+// The "Signup" Function
 
 exports.signup = (req, res, next) => {
     bcrypt.hash(req.body.password, 10).then(
@@ -25,6 +29,8 @@ exports.signup = (req, res, next) => {
         }
     );
 };
+
+// The "Login" Function
 
 exports.login = (req, res, next) => {
     User.findOne({ email: req.body.email }).then(

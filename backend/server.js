@@ -1,5 +1,9 @@
+// Installing Dependencies
+
 const http = require('http');
 const app = require('./app');
+
+// Assigning a port
 
 const normalizePort = val => {
     const port = parseInt(val, 10);
@@ -35,8 +39,12 @@ const normalizePort = val => {
     }
   };
   
+// Creating a server
+
   const server = http.createServer(app);
   
+// Error Handling
+
   server.on('error', errorHandler);
   server.on('listening', () => {
     const address = server.address();
@@ -44,4 +52,6 @@ const normalizePort = val => {
     console.log('Listening on ' + bind);
   });
   
+// Active Server Listening
+
   server.listen(port);  
